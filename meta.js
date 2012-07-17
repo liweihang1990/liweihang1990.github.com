@@ -2,9 +2,9 @@
   "site_name":"weihang.me",
   "copyright":"wawasoft 2012",
   "cates":[
-    {"name":"tech","text":"技术"},
-    {"name":"art","text":"艺术"},
-    {"name":"other","text":"其他"}
+    {"name":"tech","test":"技术"},
+    {"name":"art","test":"艺术"},
+    {"name":"other","test":"其他"}
   ],
   "articles":[
     {"title": "哪段代码更Pythonic呢？", "file": "2012-03-02-witch-one-is-best-pythonic", "cate":"tech"},
