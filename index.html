@@ -29,23 +29,26 @@
 
    <body>
         <script id="tpl-main" type="text/template">
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner">
-                    <div class="container-fluid">
-                        <a class="brand" href="#">{{site_name}}</a>
-                        <div class="nav-collapse">
-                            <ul class="nav">
-                                {{#navlist}}
-                                <li><a href="{{link}}">{{text}}</a></li>
-                                {{/navlist}}
-                            </ul>
+            
+
+        <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="well sidebar-nav">
                         </div>
                     </div>
-
+                    <div class="span9">
+                        <div class="row-fluid article-content">
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            
+                <hr>
+                <footer>
+                <p>&copy; {{copyright}} Powered by <a
+                    href="https://github.com/onlytiancai/xiaotiantian" target="_blank">我的第一个博客</a></p>
+                </footer>
+            </div><!--/.fluid-container-->
+        </script>    
         <script id="tpl-sidebar" type="text/template">
             <ul class="nav nav-list">
                 {{#months}}
