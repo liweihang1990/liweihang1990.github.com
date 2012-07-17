@@ -4,7 +4,7 @@
   "cates":[
     {"name":"tech","text":"技术"},
     {"name":"art","text":"艺术"},
-    {"name":"other","tett":"其他"}
+    {"name":"other","text":"其他"}
   ],
   "articles":[
     {"title": "哪段代码更Pythonic呢？", "file": "2012-03-02-witch-one-is-best-pythonic", "cate":"tech"},
