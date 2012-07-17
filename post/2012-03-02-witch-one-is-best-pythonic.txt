@@ -1,0 +1,116 @@
+## 哪段儿代码更优雅，可读性更高，更Pythonic？
+
+### 题目要求
+找出一个锯齿数组里长度大于5的子数组
+
+在符合要求的子数组里的数据里找出所有偶数
+
+如果数据小于10的话乘以2,大于10的除以2
+
+最后统计符合要求的数据的和
+
+### 测试数据
+
+    inputdata = [
+           [2,8,9,13,72,67,88,35,44],
+           [33,28,47,2,10,45,66,92],
+           [22,34,60,43,0,72,52],
+           [10,11,53,58]
+            ]
+
+    print sum1(inputdata)
+
+### @蛙蛙王子 python
+
+https://github.com/onlytiancai/codesnip/blob/master/python/goodorbad.py
+
+    def sum1(input):
+        return sum((lambda x: x < 10 and x*2 or x/2)(num)
+                for seq in inputdata 
+                if len(seq) >= 5
+                for num in seq
+                if num % 2 == 0)
+
+    def sum2(input):
+        def getsublist():
+            for sublist in input:
+                if len(sublist) >= 5:
+                    yield sublist
+        def filterdata(sublist):
+            for data in sublist:
+                if data % 2 == 0:
+                    yield data
+        def processdata(data):
+            if data < 10:
+                return data * 2 
+            return data / 2
+        result = 0
+        for sublist in getsublist():
+            for data in filterdata(sublist):
+                result += processdata(data)
+        return result
+
+    def sum3(input):
+        return sum(num*2 if num < 10 else num/2
+                for seq in inputdata 
+                if len(seq) >= 5
+                for num in seq
+                if num % 2 == 0)
+
+### @pw_网易有道 python
+
+https://gist.github.com/1891339
+
+
+    def sum4(input):
+        '''
+        '''
+        def filterList(matrix):
+            return filter(lambda x: len(x) >= 5, matrix)
+
+        def filterData(list):
+            return filter(lambda x: x % 2 is 0, list)
+
+        def processData(data):
+            return data < 10 and data * 2 or data / 2
+
+        def reduceList(list):
+            return reduce(lambda x, y: x + processData(y), filterData(list), 0)
+
+        def reduceMatrix(matrix):
+            return reduce(lambda result, list: result + reduceList(list), filterList(matrix), 0)
+
+        return reduceMatrix(input)
+
+### @w1e3 python
+
+    sum(map(lambda x: x/((cmp(x, 10)+1) or 0.5), 
+        itertools.chain(*[filter(lambda x: not x%2, s) 
+        for s in inputdata if len(s) > 5])))
+
+### @Leksah Haskell
+
+    sum [ if y < 10 then y*y else y | x <-inputdata, length(x) > 5 , y <- x , y `mod` 2 ==0 ] i
+
+### @codeplayer Haskell
+
+    sum' = sum
+           . map (\x -> if x<10 then x*x else x)
+           . filter ((==0) . (`mod` 2))
+           . concat
+           . filter ((>5) . length)
+
+### @时蝇喜箭 Ruby
+
+    inputdata.select{|seq| seq.length > 5}
+        .map{|seq| seq.select{|num| num % 2 == 0}.map{|num| num < 10? num*2 : num/2}}
+        .flatten.inject(&:+)
+
+### @朴灵 Javascript&Underscore
+
+    _.chain(inputdata)
+        .filter(function (arr) { return arr.length > 5; })
+        .map(function (arr) { return _.map(arr, function (num) { return num < 10 ? num * 2 : num; }); })
+        .flatten()
+        .reduce(function (memo, num) { return memo + num; }, 0)
+        .value();
