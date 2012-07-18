@@ -59,7 +59,7 @@ $(function(){
                 var that = this;            
                 this.article = options.article;            
                 _.bindAll(this, 'render');            
-                $.get('post/'+this.article+'.txt', function(data){                
+                $.get('post/'+this.article+'.md', function(data){                
                     that.model = data;                
                     that.render();          
                 });  
