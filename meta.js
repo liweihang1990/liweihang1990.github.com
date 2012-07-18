@@ -11,7 +11,6 @@
     {"title": "Task4", "file": "2012-07-18Tasks4(Trigger on Contact)", "cate":"task"},
     {"title": "Task5", "file": "2012-07-18Tasks5(Pattern & Matcher)", "cate":"task"},
     {"title": "Task6", "file": "2012-07-18Tasks6(Apex managed sharing & Batch & Scheduler & SendEmail)", "cate":"task"},
-    {"title": "Task7", "file": "2012-07-18Tasks7(VF Page for Contact Management with sorting & paging on server side)", "cate":"task"},
-    {"title": "Test", "file": "2012-03-20-cat-5018.txt", "cate":"task"}
+    {"title": "Task7", "file": "2012-07-18Tasks7(VF Page for Contact Management with sorting & paging on server side)", "cate":"task"}
   ]
 }
