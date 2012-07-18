@@ -4,7 +4,7 @@ Given String e.g.
 To define a pattern, which describes the <...>, between the two prances there should be no any prances. That means, the matcher should found from the string above:
 
 - `<table>`
-- <79df>
+- `<79df>`
 
 
 
