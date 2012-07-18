@@ -2,9 +2,7 @@
   "site_name":"weihang.me",
   "copyright":"wawasoft 2012",
   "cates":[
-    {"name":"task","text":"技术"},
-    {"name":"art","text":"艺术"},
-    {"name":"other","text":"其他"}
+    {"name":"task","text":"技术"}
   ],
   "articles":[
     {"title": "Task1", "file": "Tasks1", "cate":"task"},
